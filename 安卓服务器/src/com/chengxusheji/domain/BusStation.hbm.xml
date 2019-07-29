@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="BusStation" table="BusStation">
+
+          <!-- 主键记录编号 -->
+          <id name="stationId" column="stationId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 站点名称 -->
+          <property
+            name="stationName"
+            column="stationName"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单浮点型属性: 经度 -->
+          <property
+            name="longitude"
+            column="longitude"
+            type="float"
+          />
+
+          <!-- 简单浮点型属性: 纬度 -->
+          <property
+            name="latitude"
+            column="latitude"
+            type="float"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

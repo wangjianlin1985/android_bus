@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="BusLine" table="BusLine">
+
+          <!-- 主键记录编号 -->
+          <id name="lineId" column="lineId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 线路名称 -->
+          <property
+            name="name"
+            column="name"
+            type="string"
+            length="40"
+          />
+
+          <!-- 多对一属性: 起点站 -->
+          <many-to-one name="startStation"
+            column="startStation"
+            class="BusStation"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 终到站 -->
+          <many-to-one name="endStation"
+            column="endStation"
+            class="BusStation"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 首班车时间 -->
+          <property
+            name="startTime"
+            column="startTime"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 末班车时间 -->
+          <property
+            name="endTime"
+            column="endTime"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 所属公司 -->
+          <property
+            name="company"
+            column="company"
+            type="string"
+            length="60"
+          />
+
+          <!-- 简单字符串属性: 途径站点 -->
+          <property
+            name="tjzd"
+            column="tjzd"
+            type="string"
+            length="500"
+          />
+
+          <!-- 简单字符串属性: 地图线路坐标 -->
+          <property
+            name="polylinePoints"
+            column="polylinePoints"
+            type="string"
+            length="200"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
