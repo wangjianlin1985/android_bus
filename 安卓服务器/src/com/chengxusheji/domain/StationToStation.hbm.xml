@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="StationToStation" table="StationToStation">
+
+          <!-- 主键记录编号 -->
+          <id name="id" column="id">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 起始站 -->
+          <many-to-one name="startStation"
+            column="startStation"
+            class="BusStation"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 终到站 -->
+          <many-to-one name="endStation"
+            column="endStation"
+            class="BusStation"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
